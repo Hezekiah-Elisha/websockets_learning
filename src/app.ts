@@ -12,6 +12,7 @@ const s = app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
 
+// Web sockets starts here
 const wss = new WebSocketServer({ noServer: true });
 
 function onSocketPreError(e: Error) {
@@ -20,6 +21,7 @@ function onSocketPreError(e: Error) {
 function onSocketPostError(e: Error) {
   console.error("WebSocket post error:", e);
 }
+
 s.on("upgrade", (request, socket, head) => {
   socket.on("error", onSocketPreError);
 
