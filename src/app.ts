@@ -39,7 +39,7 @@ wss.on("connection", (ws) => {
     console.log("Client disconnected.");
   });
 
-  ws.on("error", onSocketPreError);
-  ws.on("error", onSocketPostError);
+  // ws.on("error", onSocketPreError);
+  // ws.on("error", onSocketPostError);
 });
 
